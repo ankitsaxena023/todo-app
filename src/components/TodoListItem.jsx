@@ -10,8 +10,8 @@ const TodoListItem = ({ itemArray, deleteItem, toggleCheckbox, updateItem }) => 
     <>
       <div>
         <input type="checkbox" checked={itemArray.isEditable} onChange={toggleCheckbox} />
-        <input style={itemArray.isEditable ? { textDecoration: 'line-through' } : { textDecoration: 'none' }} type="text" value={listName} onChange={(e) => setListName(e.target.value)} readOnly={!itemArray.isUpdatable} />
-        <button disabled={itemArray.isEditable} onClick={updateItem}>{itemArray.isUpdatable ? 'update' : 'edit'}</button>
+        <input style={itemArray.isEditable ? { textDecoration: 'line-through' } : { textDecoration: 'none' }} type="text" value={listName} onChange={(e) => setListName(e.target.value)} readOnly={itemArray.isUpdatable} />
+        <button disabled={itemArray.isEditable} onClick={updateItem}>{itemArray.isUpdatable ? 'edit' : 'update'}</button>
         <button onClick={deleteItem}>delete</button>
       </div>
     </>
